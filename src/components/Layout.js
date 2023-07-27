@@ -23,7 +23,7 @@ export default function Layout ({ children }) {
   
   
   return (
-    <div className="box-border xl:text-center mx-auto max-h-screen block">
+    <div className="box-border xl:text-center mx-auto max-w-screen-xl block">
       <Helmet title={title.title} /> 
       <Navbar/>
       <div>

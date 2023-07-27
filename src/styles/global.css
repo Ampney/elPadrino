@@ -4,8 +4,8 @@
 
  
 @font-face {
-  font-family: 'Konnect';
-  src: url(./fonts/Konnect-Regular.otf) format("opentype");
+  font-family: 'sans-serif';
+  src: url(./fonts/Konnect-Thin.otf) format("opentype");
   font-family: 'VivaLa';
   src: url(./fonts/Viva\ La\ Fiesta\ -\ Uno\ Base.otf) format("opentype");
   font-family: 'Hitchcut';
@@ -14,18 +14,30 @@
 
 @layer components {
   .card {
-    @apply xl:grid grid-cols-3 gap-x-10 mx-5 py-16 leading-6
+    @apply lg:gap-x-7 xl:grid grid-cols-3 gap-x-10 mx-5 py-16 leading-6 
   }
   .card-div {
-    @apply xl:text-left px-7 py-16
+    @apply lg:py-12 xl:text-left xl:px-7 xl:py-16 
   }
   .card-h2 {
-    @apply xl:text-4xl uppercase font-bold my-8 font-secondary
+    @apply font-secondary lg:text-2xl lg:my-0 xl:text-4xl uppercase font-bold my-8
   }
   .card-p {
-    @apply xl:font-primary text-2xl
+    @apply font-sans lg:text-xl xl:text-2xl 
   }
   .nav-link {
-    @apply xl:px-6 text-xl font-thin uppercase font-primary
+    @apply font-sans lg:px-2 text-lg lg:font-light xl:px-6 xl:text-xl uppercase xl:font-thin 
+  }
+  .span-icon {
+    @apply xl:flex items-center my-4 uppercase
+  }
+  .lis{
+    @apply lg:text-xl xl:text-2xl my-2 font-thin 
+  }
+  .figcaption-p {
+    @apply font-sans lg:text-xl lg:font-semibold xl:text-3xl uppercase font-bold 
+  }
+  .footer-link {
+    @apply lg:text-lg xl:text-xl mx-5 font-thin 
   }
 }
