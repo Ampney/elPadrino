@@ -13,6 +13,12 @@
 }
 
 @layer components {
+  .button {
+    @apply lg:text-sm xl:bg-red-600 text-white my-10 uppercase font-sans p-5 justify-start xl:text-xl hover:bg-white hover:text-red-600 hover:border-red-600 hover:border-solid hover:border-2
+  }
+  .btn {
+    @apply xl:bg-college text-white my-10 uppercase font-sans p-5 justify-center mx-auto text-sm lg:p-3 hover:bg-white hover:text-college hover:border-college hover:border hover:border-solid
+  }
   .card {
     @apply lg:gap-x-7 xl:grid grid-cols-3 gap-x-10 mx-5 py-16 leading-6 
   }
@@ -25,19 +31,19 @@
   .card-p {
     @apply font-sans lg:text-xl xl:text-2xl 
   }
-  .nav-link {
-    @apply font-sans lg:px-2 text-lg lg:font-light xl:px-6 xl:text-xl uppercase xl:font-thin 
-  }
-  .span-icon {
-    @apply xl:flex items-center my-4 uppercase
-  }
-  .lis{
-    @apply lg:text-xl xl:text-2xl my-2 font-thin 
-  }
   .figcaption-p {
     @apply font-sans lg:text-xl lg:font-semibold xl:text-3xl uppercase font-bold 
   }
   .footer-link {
     @apply lg:text-lg xl:text-xl mx-5 font-thin 
+  }
+  .lis{
+    @apply lg:text-xl xl:text-2xl my-2 font-thin 
+  }
+  .nav-link {
+    @apply font-sans lg:px-2 text-lg lg:font-light xl:px-6 xl:text-xl uppercase xl:font-thin 
+  }
+  .span-icon {
+    @apply xl:flex items-center my-4 uppercase
   }
 }
