@@ -21,14 +21,20 @@ module.exports = {
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages/`,
-      },
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images/`,
-      },
-    }
+      }
+    },
+    {
+      resolve: 'gatsby-background-image',
+      options: {
+        specialChars: '/:',
+      }
+    },
 ]
 };

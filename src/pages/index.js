@@ -1,10 +1,11 @@
   import * as React from "react"
   import { Link, graphql } from "gatsby";
-  import { StaticImage } from "gatsby-plugin-image";
+  import { StaticImage, getImage, GatsbyImage } from "gatsby-plugin-image";
+  import { convertToBgImage } from "gbimage-bridge"
+import BackgroundImage from 'gatsby-background-image'
   import { motion } from "framer-motion"
   import Layout from "../components/Layout";
   import ImagesLayout from "../components/ImagesLayout";
-  import bgImg from "../images/IMG_1864.JPG";
 
 
   const motionh3 ={
@@ -54,27 +55,24 @@
     }
     }
   }
-  const styles = {
-    main: {
-      backgroundImage: 'url(../images/IMG_1864.JPG)',
-      width: "100%",
-    }
-  };
 
 
-  export default function Home ({ data,className }) {
 
+  export default function Home ({ data }) {
+
+    const image = getImage(data.allImageSharp.nodes[7])
+    const backgroundImage = convertToBgImage(image)
 
     return (
       <Layout>
-        <div className="block xl: px-12 py-36 main lg:px-10 lg:py-24 sm:py-4" 
-        style={{
-          backgroundImage: `url(${bgImg})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          height: '500px',
-        }} >
+ <BackgroundImage
+         Tag="section"
+         {...backgroundImage}
+         preserveStackingContext
+       >
+        
+        
+        <div className="block xl: px-12 py-36 main lg:px-10 lg:py-24 sm:py-4" style={{minHeight: 1000, minWidth: 1000}}>
         {/* <StaticImage 
                 src='../images/IMG_1864.JPG' 
                 placeholder="blurred"
@@ -82,7 +80,7 @@
                 width={500}
                 height={550}
                 className="absolute right-10 -z-5"
-                alt='Mini Quesadilla' /> */}
+              alt='Mini Quesadilla' /> */}
           <motion.h3 
           initial="hidden"
           animate="visible"
@@ -99,6 +97,7 @@
           </motion.span>
         </div>
 
+            </BackgroundImage>
 
         <div className="xl:bg-primary p-4">
           <div className="">
@@ -173,16 +172,14 @@
       )
   }
 
-  export const BgQuery = graphql`
-  query {
-    allFile(filter: {relativePath: {eq: "IMG_1733.JPG"}}) {
-      nodes {
-        childImageSharp {
-          fluid {
-            src
+
+export const placeholderImage = 
+graphql`
+        query {
+          allImageSharp {
+            nodes {
+              gatsbyImageData
+            }
           }
         }
-      }
-    }
-  }`
-
+      `
