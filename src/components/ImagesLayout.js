@@ -45,12 +45,12 @@ export default function ImagesLayout() {
     <React.Fragment>
       <div className='bg-white'>  
      
-        <div className='xl:py-12 lg:py-10'>
+        <div className='xl:py-12 lg:py-10 sm:py-5'>
           <motion.h2 
              initial="hidden"
              whileInView="visible"
              variants={motiondiv}
-             className='font-secondary xl:text-6xl uppercase font-bold lg:text-4xl'>✨✨✨✨✨ Popular ✨✨✨✨✨<br />✨✨✨✨✨Signature Meals✨✨✨✨✨</motion.h2>
+             className='font-secondary sm:text-xl xl:text-6xl uppercase font-bold lg:text-4xl'>✨✨✨✨✨ Popular ✨✨✨✨✨<br />✨✨✨✨✨Signature Meals✨✨✨✨✨</motion.h2>
         </div>
         <div>
           <motion.div 

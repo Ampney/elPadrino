@@ -9,8 +9,8 @@ import { Link } from 'gatsby'
 const Footer = () => {
 
     return (
-      <footer className='bg-primary font-sans xl:grid grid-cols-2'>
-      <div className='mx-auto py-10 text-left'>
+      <footer className='bg-primary font-sans xl:grid grid-cols-2 sm:block'>
+      <div className='mx-auto py-10 text-left sm:text-center'>
         <p className='xl:text-5xl xl:my-2 font-bold uppercase my-3 lg:text-3xl'>We are open</p>
         <p className='lis'>Mondays: 9am - 9pm</p>
         <p className='lis'>Tuesdays: 9am - 11pm</p>
@@ -21,7 +21,7 @@ const Footer = () => {
         <p className='lis'>Sundays: 9am - 9pm</p>
       </div>
       <div className='xl:flex flex-col mx-auto py-10 cursor-pointer'>
-        <span><p className='xl:text-5xl font-bold uppercase my-3 text-left lg:text-3xl'>Say ¡Hola! to us 👋</p></span>
+        <span><p className='xl:text-5xl font-bold uppercase my-3 text-left lg:text-3xl sm:text-center'>Say ¡Hola! to us 👋</p></span>
         <span className='span-icon'>
           <FontAwesomeIcon icon={faMapLocation} size="1x"  />
           <p className='footer-link'>256, Etim Inyang Crescent, Victoria Island, Lagos</p>
@@ -39,7 +39,7 @@ const Footer = () => {
           <Link to="tel:8097128682" className='footer-link'>+2348097128682</Link>
         </span>
       </div>
-      <span className='xl:col-span-2 bg-college py-5 text-xl lg:py-3 lg:text-lg'> <p>&copy;2023 by ElPadrino Restaurants. All Rights Reserved </p></span>
+      <span className='sm:bg-college sm:text-base sm: col-span-1 xl:col-span-2  xl:bg-college py-5 text-xl lg:py-3 lg:text-lg'> <p>&copy;2023 by ElPadrino Restaurants. All Rights Reserved </p></span>
     </footer>
     )
 }

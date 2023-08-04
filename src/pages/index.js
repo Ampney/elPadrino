@@ -60,7 +60,7 @@ import BackgroundImage from 'gatsby-background-image'
 
   export default function Home ({ data }) {
 
-    const image = getImage(data.allImageSharp.nodes[7])
+    const image = getImage(data.allImageSharp.nodes[18])
     const backgroundImage = convertToBgImage(image)
 
     return (
@@ -72,25 +72,17 @@ import BackgroundImage from 'gatsby-background-image'
        >
         
         
-        <div className="block xl: px-12 py-36 main lg:px-10 lg:py-24 sm:py-4" style={{minHeight: 1000, minWidth: 1000}}>
-        {/* <StaticImage 
-                src='../images/IMG_1864.JPG' 
-                placeholder="blurred"
-                layout="fixed"
-                width={500}
-                height={550}
-                className="absolute right-10 -z-5"
-              alt='Mini Quesadilla' /> */}
+        <div className="block xl: px-12 py-36 main lg:px-10 lg:py-24 sm:py-0" style={{maxHeight: 800, minWidth: 1000, backgroundAttachment: "scroll", backgroundPosition: "bottom right !important"}}>
           <motion.h3 
           initial="hidden"
           animate="visible"
           variants={motionh3}
-          className="font-sans text-base py-4 mx-0 lg:text-3xl xl:text-5xl text-left xl:mx-2 xl:py-10 font-bold text-black uppercase">Open for delivery &amp; Pick up</motion.h3>
+          className="font-sans sm:text-xl py-4 mx-0 lg:text-3xl xl:text-5xl text-left xl:mx-2 xl:py-10 font-bold text-black uppercase">Open for delivery &amp; Pick up</motion.h3>
           <motion.h1 
           initial="hidden"
           animate="visible"
-          variants={motionh1}
-          className="font-secondary text-2xl lg:text-5xl xl:text-8xl text-left uppercase text-black mb-16 font-bold">we are not mexican,<br/>we are naija-mex</motion.h1>
+          variants={motionh3}
+          className="font-secondary sm:text-3xl sm:my-0 lg:text-5xl xl:text-8xl text-left uppercase text-black mb-16 font-bold">we are not mexican,<br/>we are naija-mex</motion.h1>
           <motion.span className="flex"> 
             <Link to="https://elpadrino.africa.restaurant/" 
             className="button">order online</Link>
@@ -105,9 +97,9 @@ import BackgroundImage from 'gatsby-background-image'
              <motiondiv 
                initial="hidden"
                whileInView="visible"
-               className="grid grid-cols-3"
+               className="grid grid-cols-3 sm:grid-cols-1"
                variants={motiondiv} >
-               <div className="card-div">
+               <div className="card-div sm:order-last">
                  <h2 className="card-h2">the food</h2>
                  <p className="card-p"> Welcome to El Padrino Restaurant, where fresh and flavorful Nigerian ingredients meet Mexican cuisine! 
                  We craft each dish to bring out the best of both worlds, creating a fusion we call; Naija-Mexican.</p>
@@ -125,7 +117,7 @@ import BackgroundImage from 'gatsby-background-image'
           <motion.div
              initial="hidden"
              whileInView="visible"
-             className="grid grid-cols-3"
+             className="grid grid-cols-3 sm:grid-cols-1"
              variants={motiondiv} >
             <div className="card-div col-span-2">
               <StaticImage 
@@ -134,7 +126,7 @@ import BackgroundImage from 'gatsby-background-image'
                 layout="fullWidth"
                 alt='ElPadrino' />
             </div>
-            <div className="card-div text-right">
+            <div className="card-div lg:text-right xl:text-right sm:text-center">
               <h2 className="card-h2">the space</h2>
               <p className="card-p"> Community is the second important pillar of what makes us El Padrino and we tried to reflect that sense of community
                 within our space by crafting a unique community-styled environment where everyone is welcome to be their most authentic selves anytime, 
@@ -146,9 +138,9 @@ import BackgroundImage from 'gatsby-background-image'
           <motion.div 
             initial="hidden"
             whileInView="visible"
-            className="grid grid-cols-3"
+            className="grid grid-cols-3 sm:grid-cols-1"
             variants={motiondiv}>
-           <div className="card-div">
+           <div className="card-div sm:order-last">
               <h2 className="card-h2">the taqueros</h2>
               <p className="card-p"> Community is the second important pillar of what makes us El Padrino and we tried to reflect that sense of community
                 within our space by crafting a unique community-styled environment where everyone is welcome to be their most authentic selves anytime, 

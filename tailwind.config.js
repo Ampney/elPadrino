@@ -7,21 +7,16 @@ module.exports = {
   theme: {
     screens: {
       '2xl': {'max': '1535px'},
-      // => @media (max-width: 1535px) { ... }
-
+      
       'xl': {'max': '1440px'},
-      // => @media (max-width: 1279px) { ... }
-
+      
       'lg': {'max': '1024px'},
-      // => @media (max-width: 1023px) { ... }
-
+      
       'md': {'max': '767px'},
-      // => @media (max-width: 767px) { ... }
+
+      'sm': { 'max' : '480px'},
     },
     extend: {
-      backgroundImage: {
-        // 'hero': "url('./src/images/MiniQ.JPG')",
-       },
     colors: {
       primary: "hsl(34, 100%, 96%)",
       secondary: "#13110C",

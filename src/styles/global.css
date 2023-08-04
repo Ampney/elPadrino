@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
  
 @font-face {
   font-family: 'sans-serif';
@@ -14,16 +19,16 @@
 
 @layer components {
   .button {
-    @apply lg:text-sm xl:bg-red-600 text-white my-10 uppercase font-sans p-5 justify-start xl:text-xl hover:bg-white hover:text-red-600 hover:border-red-600 hover:border-solid hover:border-2
+    @apply lg:text-sm xl:bg-red-600 text-white my-10 uppercase font-sans p-5 justify-start xl:text-xl hover:bg-white hover:text-red-600 hover:border-red-600 hover:border-solid hover:border-2 sm:text-xs
   }
   .btn {
-    @apply xl:bg-college text-white my-10 uppercase font-sans p-5 justify-center mx-auto text-sm lg:p-3 hover:bg-white hover:text-college hover:border-college hover:border hover:border-solid
+    @apply xl:bg-college text-white my-10 uppercase font-sans p-5 justify-center mx-auto text-sm lg:p-3 hover:bg-white hover:text-college hover:border-college hover:border hover:border-solid sm:text-xs
   }
   .card {
-    @apply lg:gap-x-7 xl:grid grid-cols-3 gap-x-10 mx-5 py-16 leading-6 
+    @apply lg:gap-x-7 xl:grid grid-cols-3 gap-x-10 mx-5 py-16 leading-6 sm:py-5 sm:grid-cols-1
   }
   .card-div {
-    @apply lg:py-12 xl:text-left xl:px-7 xl:py-16 
+    @apply lg:py-12 xl:text-left xl:px-7 xl:py-16 sm:py-5 sm:text-center
   }
   .card-h2 {
     @apply font-secondary lg:text-2xl lg:my-0 xl:text-4xl uppercase font-bold my-8
@@ -32,18 +37,24 @@
     @apply font-sans lg:text-xl xl:text-2xl 
   }
   .figcaption-p {
-    @apply font-sans lg:text-xl lg:font-semibold xl:text-3xl uppercase font-bold 
+    @apply font-sans lg:text-xl lg:font-semibold xl:text-3xl uppercase font-bold sm:pb-8
   }
   .footer-link {
-    @apply lg:text-lg xl:text-xl mx-5 font-thin 
+    @apply lg:text-lg xl:text-xl mx-5 font-thin sm:text-base
+  }
+  .modal {
+    @apply text-center w-full bg-white fixed top-0 left-0 z-50 h-screen  overflow-y-hidden
+  }
+  .modal_content {
+    @apply flex flex-col py-20 my-20 bg-transparent 
   }
   .lis{
     @apply lg:text-xl xl:text-2xl my-2 font-thin 
   }
   .nav-link {
-    @apply font-sans lg:px-2 text-lg lg:font-light xl:px-6 xl:text-xl uppercase xl:font-thin 
+    @apply font-sans lg:px-2 text-lg lg:font-light xl:px-6 xl:text-xl uppercase xl:font-thin sm:py-5 sm:font-extralight
   }
   .span-icon {
-    @apply xl:flex items-center my-4 uppercase
+    @apply xl:flex items-center my-4 uppercase sm:flex-col-reverse
   }
 }
