@@ -1,41 +1,8 @@
 import React from 'react'
 import { StaticImage } from "gatsby-plugin-image"
-import { Link } from 'gatsby'
 import { motion } from 'framer-motion'
+import { motiondiv, motionimage } from '../pages'
 
-
-
-
-const motiondiv = {
-  hidden:{
-    opacity: 0, 
-    scale: 0.9
-  },
-  visible: {
-    opacity: 1, 
-    scale: 1,
-    transition:{
-      duration: 2,
-      scale: {duration: 1},
-      opacity: {duration: 1}
-  }
-  }
-}
-const motionimage ={
-  hidden: {
-    opacity: 0,
-    y: 100
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 2,
-      opacity: { duration: 1},
-      y: { duration: 1}
-    }
-  }
-}
 
 
 export default function ImagesLayout() {
@@ -76,7 +43,7 @@ export default function ImagesLayout() {
           </div>
           <div>
               <StaticImage 
-              src='../images/IMG_1851.JPG' 
+              src='../images/IMG_1734.JPG' 
               placeholder="blurred"
               layout="fullWidth"
               alt='Burrito' />
@@ -84,7 +51,7 @@ export default function ImagesLayout() {
               </div>
           </motion.div>
           <span className="flex"> 
-           <Link to="https://elpadrino.africa.restaurant/" className="btn">full menu</Link>
+           <a href="https://elpadrino.africa.restaurant/" className="btn">full menu</a>
          </span>
         </div>
       </div>

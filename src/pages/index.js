@@ -1,14 +1,15 @@
-  import * as React from "react"
-  import { Link, graphql } from "gatsby";
-  import { StaticImage, getImage, GatsbyImage } from "gatsby-plugin-image";
-  import { convertToBgImage } from "gbimage-bridge"
+import * as React from "react"
 import BackgroundImage from 'gatsby-background-image'
-  import { motion } from "framer-motion"
-  import Layout from "../components/Layout";
-  import ImagesLayout from "../components/ImagesLayout";
+import Layout from "../components/Layout";
+import ImagesLayout from "../components/ImagesLayout";
+import { graphql } from "gatsby";
+import { StaticImage, getImage } from "gatsby-plugin-image";
+import { useState } from "react";
+import { convertToBgImage } from "gbimage-bridge"
+import { motion } from "framer-motion"
 
 
-  const motionh3 ={
+  export const motionh3 ={
     hidden: {
       opacity: 0,
       x: -100
@@ -24,22 +25,34 @@ import BackgroundImage from 'gatsby-background-image'
       }
     }
   }
-  const motionh1 = {
-    hidden: {
-      opacity: 0,
-      y: "-100vw",
+  export const motiondrop = {
+    hidden:{
+      opacity: 0, 
     },
     visible: {
-      opacity: 1,
-      y: 0,
+      opacity: [ 1, 0, 1, 0, 1 ],
       transition: {
-        type: "spring",
-        damping: 12,
-        stiffness: 100,
+        ease: "easeIn",
+        duration: 5,
       }
     }
   }
-  const motiondiv = {
+   // const motionh1 = {
+  //   hidden: {
+  //     opacity: 0,
+  //     y: "-100vw",
+  //   },
+  //   visible: {
+  //     opacity: 1,
+  //     y: 0,
+  //     transition: {
+  //       type: "spring",
+  //       damping: 12,
+  //       stiffness: 100,
+  //     }
+  //   }
+  // }
+  export const motiondiv = {
     hidden:{
       opacity: 0, 
       scale: 0.9
@@ -55,13 +68,50 @@ import BackgroundImage from 'gatsby-background-image'
     }
     }
   }
+  export const motionimage ={
+    hidden: {
+      opacity: 0,
+      y: 100
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 2,
+        opacity: { duration: 1},
+        y: { duration: 1}
+      }
+    }
+  }
 
 
 
   export default function Home ({ data }) {
+    const image = getImage(data.allImageSharp.nodes[11])
+    const image1 = getImage(data.allImageSharp.nodes[12])
+    const image2 = getImage(data.allImageSharp.nodes[13])
+    const image3 = getImage(data.allImageSharp.nodes[14])
+    const image4 = getImage(data.allImageSharp.nodes[15])
+    
+    const bgImages = [image,image1,image2,image3,image4];
+    const [ slide, setSlide ] = useState(bgImages[1]);
+    
 
-    const image = getImage(data.allImageSharp.nodes[18])
-    const backgroundImage = convertToBgImage(image)
+    // useEffect(() => {
+    //   const timer = setInterval(() => {
+    //     for (let i = 0; i < bgImages.length; i++) {
+    //       const slide = bgImages[i]
+    //     }
+    //     setSlide(slide)
+    //   }, 1000)
+      
+    //   return () => clearInterval(timer)
+    // }, [])
+
+
+       
+ 
+    const backgroundImage = convertToBgImage(slide)
 
     return (
       <Layout>
@@ -72,20 +122,21 @@ import BackgroundImage from 'gatsby-background-image'
        >
         
         
-        <div className="block xl: px-12 py-36 main lg:px-10 lg:py-24 sm:py-0" style={{maxHeight: 800, minWidth: 1000, backgroundAttachment: "scroll", backgroundPosition: "bottom right !important"}}>
+        <div className="block xl: px-12 py-36 main lg:px-10 lg:py-24 sm:py-0 before:bg-scroll after:bg-scroll" style={{ maxHeight: 900, minWidth: 1000, }}>
           <motion.h3 
           initial="hidden"
           animate="visible"
           variants={motionh3}
-          className="font-sans sm:text-xl py-4 mx-0 lg:text-3xl xl:text-5xl text-left xl:mx-2 xl:py-10 font-bold text-black uppercase">Open for delivery &amp; Pick up</motion.h3>
+          className="font-sans sm:text-xl py-4 mx-0 lg:text-3xl xl:text-5xl text-left xl:mx-2 xl:py-10 font-bold text-white uppercase">Open for delivery &amp; Pick up</motion.h3>
           <motion.h1 
           initial="hidden"
           animate="visible"
           variants={motionh3}
-          className="font-secondary sm:text-3xl sm:my-0 lg:text-5xl xl:text-8xl text-left uppercase text-black mb-16 font-bold">we are not mexican,<br/>we are naija-mex</motion.h1>
+          className="font-secondary sm:text-3xl sm:my-0 lg:text-5xl xl:text-8xl text-left uppercase text-white mb-16 font-bold">
+            <span className="text-padrino">we</span> are not <span className="text-red-500">mexican</span>,<br/>we are <span className="text-green-600">naija</span>-<span className="text-padrino">mex</span></motion.h1>
           <motion.span className="flex"> 
-            <Link to="https://elpadrino.africa.restaurant/" 
-            className="button">order online</Link>
+            <a href="https://elpadrino.africa.restaurant/" 
+            className="button">order online</a>
           </motion.span>
         </div>
 
@@ -94,7 +145,7 @@ import BackgroundImage from 'gatsby-background-image'
         <div className="xl:bg-primary p-4">
           <div className="">
 
-             <motiondiv 
+             <motion.div 
                initial="hidden"
                whileInView="visible"
                className="grid grid-cols-3 sm:grid-cols-1"
@@ -112,7 +163,7 @@ import BackgroundImage from 'gatsby-background-image'
                   className=""
                   alt='Mini Quesadilla' />
                </div>
-             </motiondiv>  
+             </motion.div>  
 
           <motion.div
              initial="hidden"

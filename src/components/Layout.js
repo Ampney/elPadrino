@@ -19,12 +19,12 @@ export default function Layout ({ children }) {
   },
   `)
 
-  const title = data.site.siteMetadata;
+  const title = data.site.siteMetadata.title;
   
   
   return (
     <div className="box-border xl:text-center mx-auto max-w-screen-xl block sm:ax-w-screen-sm sm:overflow-x-hidden">
-      <Helmet title={title.title} /> 
+      <Helmet title={title} /> 
       <Navbar/>
       <div>
       {children}

@@ -2,7 +2,6 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faMobile, faMapLocation, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { StaticImage } from 'gatsby-plugin-image'
-import { Link } from 'gatsby'
 
 
 
@@ -28,18 +27,18 @@ const Footer = () => {
         </span>
         <span className='span-icon'>
           <StaticImage src='../images/instagram.png' placeholder="blurred" layout="fixed" width={20} height={20} alt='insta'/>
-          <Link to="https://www.instagram.com/elpadrino.ng/" className='footer-link'>Elpadrino.ng</Link>
+          <a href="https://www.instagram.com/elpadrino.ng/" className='footer-link'>Elpadrino.ng</a>
         </span> 
         <span className='span-icon'>
           <FontAwesomeIcon icon={faEnvelope} size="1x" />
-          <Link to="uzo.umeh@elpaldrino.com" className='footer-link'>uzo.umeh@elpadrino.com</Link>
+          <a href="uzo.umeh@elpaldrino.com" className='footer-link'>uzo.umeh@elpadrino.com</a>
         </span>
         <span className='span-icon'>
           <FontAwesomeIcon icon={faMobile} size="1x" />
-          <Link to="tel:8097128682" className='footer-link'>+2348097128682</Link>
+          <a href="tel:8097128682" className='footer-link'>+2348097128682</a>
         </span>
       </div>
-      <span className='sm:bg-college sm:text-base sm: col-span-1 xl:col-span-2  xl:bg-college py-5 text-xl lg:py-3 lg:text-lg'> <p>&copy;2023 by ElPadrino Restaurants. All Rights Reserved </p></span>
+      <span className='bg-college sm:text-base sm: col-span-1 xl:col-span-2 xl:py-5 text-xl lg:py-3 lg:text-lg'> <p className='sm:bg-college'>&copy;2023 by ElPadrino Restaurants. All Rights Reserved </p></span>
     </footer>
     )
 }

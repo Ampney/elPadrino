@@ -2,18 +2,20 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faTimes } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'gatsby'
+import { motion } from 'framer-motion'
+
 
 export default function Modal({ toggleModal }) {
   return (
     <div className='modal'>  
-      <button onClick={toggleModal}><FontAwesomeIcon icon={faTimes} size="2x" className='mx-4' /></button>
-            <div className='text-center mx-auto'>
+      <button onClick={toggleModal} className='flex flex-row-reverse my-5 mx-4'><FontAwesomeIcon icon={faTimes} size="2x" /></button>
+            <motion.div className='text-center mx-auto'>
               <ul className='modal_content'>
                <Link to="/"><li className='nav-link'>Home</li></Link>
-               <Link to="https://elpadrino.africa.restaurant/"><li className='nav-link'>Menu</li></Link>
-               <Link to=""><li className='nav-link'>Catering</li></Link>      
+               <a href="https://elpadrino.africa.restaurant/"><li className='nav-link'>Menu</li></a>
+               <Link to="/catering/"><li className='nav-link'>Catering</li></Link>      
               </ul>
-            </div>
+            </motion.div>
          </div>
   )
 }

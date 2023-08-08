@@ -3,10 +3,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Elpadrino.ng`,
+    title: `ElPadrino.ng`,
     siteUrl: `https://www.yourdomain.tld`,
     author: '@Ampney',
-    description: 'We’re not Mexican, We’re Naija-Mexican',
+    description: 'We are not mexica, we creating a fusion we call; Naija-Mex.',
     copyright: 'This website is copyright 2023. ElPadrino👌'
   },
   plugins: [
