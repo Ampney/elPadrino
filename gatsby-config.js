@@ -7,7 +7,8 @@ module.exports = {
     siteUrl: `https://www.yourdomain.tld`,
     author: '@Ampney',
     description: 'We are not mexica, we creating a fusion we call; Naija-Mex.',
-    copyright: 'This website is copyright 2023. ElPadrino👌'
+    copyright: 'This website is copyright 2023. ElPadrino👌',
+    keywords: "'naija-mex', 'resturants around VI', 'tacos', 'everything mexican'"
   },
   plugins: [
     'gatsby-plugin-postcss',

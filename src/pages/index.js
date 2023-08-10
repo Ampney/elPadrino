@@ -193,9 +193,8 @@ import { motion } from "framer-motion"
             variants={motiondiv}>
            <div className="card-div sm:order-last">
               <h2 className="card-h2">the taqueros</h2>
-              <p className="card-p"> Community is the second important pillar of what makes us El Padrino and we tried to reflect that sense of community
-                within our space by crafting a unique community-styled environment where everyone is welcome to be their most authentic selves anytime, 
-                any day of the week (but especially on Tuesdays).</p>
+              <p className="card-p"> The heart of El Padrino, the champions of El Padrino's unique culture are the people that make El Padrino, El Padrino. Our Taqueros are energetic, 
+              passionate and crazy about treating everything from the food, to each other and most importantly, YOU; with dignity, love and respect.).</p>
            </div>
            <div className="card-div col-span-2">
              <StaticImage 
