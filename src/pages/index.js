@@ -105,7 +105,7 @@ import { motion } from "framer-motion"
           initial="hidden"
           animate="visible"
           variants={motionh3}
-          className="font-sans sm:text-xl py-4 mx-0 lg:text-3xl xl:text-5xl text-left xl:mx-2 xl:py-10 font-bold text-white uppercase">Open for delivery &amp; Pick up</motion.h3>
+          className="font-sans sm:text-xl py-2 mx-0 lg:text-3xl xl:text-5xl text-left xl:mx-2 xl:py-10 font-bold text-white uppercase">Open for delivery &amp; Pick up</motion.h3>
           <motion.h1 
           initial="hidden"
           animate="visible"
