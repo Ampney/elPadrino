@@ -87,7 +87,6 @@ import { motion } from "framer-motion"
 
 
   export default function Home ({ data }) {
-    console.log(data)
     const image = data.file.childImageSharp.gatsbyImageData
 
     const backgroundImage = convertToBgImage(image)
