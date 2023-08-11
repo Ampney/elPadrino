@@ -110,7 +110,7 @@ import { motion } from "framer-motion"
           initial="hidden"
           animate="visible"
           variants={motionh3}
-          className="font-secondary sm:text-3xl sm:my-0 lg:text-5xl xl:text-8xl text-left uppercase text-white mb-16 font-bold">
+          className="font-secondary sm:text-2xl sm:my-0 lg:text-5xl xl:text-8xl text-left uppercase text-white mb-16 font-bold">
             <span className="text-padrino">we</span> are not <span className="text-red-500">mexican</span>,<br/>we are <span className="text-green-600">naija</span>-<span className="text-padrino">mex</span></motion.h1>
           <motion.span className="flex"> 
             <a href="https://elpadrino.africa.restaurant/" 
