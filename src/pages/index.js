@@ -87,31 +87,10 @@ import { motion } from "framer-motion"
 
 
   export default function Home ({ data }) {
-    const image = getImage(data.allImageSharp.nodes[11])
-    const image1 = getImage(data.allImageSharp.nodes[12])
-    const image2 = getImage(data.allImageSharp.nodes[13])
-    const image3 = getImage(data.allImageSharp.nodes[14])
-    const image4 = getImage(data.allImageSharp.nodes[15])
-    
-    const bgImages = [image,image1,image2,image3,image4];
-    const [ slide, setSlide ] = useState(bgImages[1]);
-    
+    console.log(data)
+    const image = data.file.childImageSharp.gatsbyImageData
 
-    // useEffect(() => {
-    //   const timer = setInterval(() => {
-    //     for (let i = 0; i < bgImages.length; i++) {
-    //       const slide = bgImages[i]
-    //     }
-    //     setSlide(slide)
-    //   }, 1000)
-      
-    //   return () => clearInterval(timer)
-    // }, [])
-
-
-       
- 
-    const backgroundImage = convertToBgImage(slide)
+    const backgroundImage = convertToBgImage(image)
 
     return (
       <Layout>
@@ -218,8 +197,8 @@ import { motion } from "framer-motion"
 export const placeholderImage = 
 graphql`
         query {
-          allImageSharp {
-            nodes {
+          file(relativePath: {eq: "1.png"}) {
+            childImageSharp {
               gatsbyImageData
             }
           }

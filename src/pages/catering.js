@@ -14,7 +14,7 @@ import { motiondiv, motionh3, motiondrop } from ".";
 const Catering = ({ data }) => {
 
   const text = "#PADRINOEXPERIENCE ";
-  const image = getImage(data.allImageSharp.nodes[18])
+  const image = data.file.childImageSharp.gatsbyImageData
   const backgroundImage = convertToBgImage(image)
 
   return(
@@ -63,8 +63,8 @@ export default Catering;
 export const placeholderImage = 
 graphql`
         query {
-          allImageSharp {
-            nodes {
+          file(relativePath: {eq: "Darker Tacobites.png"}) {
+            childImageSharp {
               gatsbyImageData
             }
           }
